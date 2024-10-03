@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link rel="stylesheet" href="../csscode/dashboard.css">
+    <link rel="stylesheet" href="../csscode/style.css">
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch event data from the API
+            $.ajax({
+                url: 'http://localhost:3000/events',  // Adjust the API URL if necessary
+                type: 'GET',
+                success: function(events) {
+                    var tableBody = $('table tbody');
+    
+                    // Clear existing table rows if any
+                    tableBody.empty();
+    
+                    // Loop through the events and append rows to the table
+                    events.forEach(function(event) {
+                        var row = `
+                            <tr>
+                                <td>${event.title}</td>
+                                <td>${event.organization_name}</td>
+                                <td>${event.event_date}</td>
+                                <td>${event.location}</td>
+                                
+                            </tr>
+                        `;
+                        tableBody.append(row);
+                    });
+    
+                   
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to fetch events:', error);
+                    alert('Unable to load events. Please try again later.');
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+     <!-- Upper Navbar -->
+     <div class="upper-navbar" id="upperNavbar">
+        <div class="navbar-left">
+            <h2>EMS</h2>
+        </div>
+        <div class="navbar-right" id="authLinks">
+            <!-- These links will be dynamically changed -->
+            <a href="login.html" id="loginLink">Login</a>
+            <a href="signup.html" id="signupLink">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Lower Navbar -->
+    <div class="lower-navbar" id="lowerNavbar">
+        <a href="home.html">Home</a> 
+        <a href="event-creation.html">Event Creation</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="event-discovery.html">Event Discovery</a>
+        <a href="ticketing.html">Ticketing</a>
+        <a href="contact.html">contact</a>
+    </div>
+    
+    <script src="../jscode/script.js"></script>
+    <div class="pricing-table">
+        <h1>OUR <span>SERVICES</span></h1>
+        <div class="pricing-cards">
+            <div class="card">
+                <h2>For Birthdays</h2>
+                <p class="price">3000.00</p>
+                <ul>
+                    <li> Full Services</li>
+                    <li> Decorations</li>
+                    <li> Music And Photos</li>
+                    <li> Food And Drinks</li>
+                    <li> Invitation Card</li>
+                    <li>May vary</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>For Wedding</h2>
+                <p class="price">10000.00</p>
+                <ul>
+                    <li> Full Services</li>
+                    <li> Decorations</li>
+                    <li> Music And Photos</li>
+                    <li> Food And Drinks</li>
+                    <li> Invitation Card</li>
+                    <li>May vary</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>For Concerts</h2>
+                <p class="price">15000.00</p>
+                <ul>
+                    <li> Full Services</li>
+                    <li> Decorations</li>
+                    <li> Music And Photos</li>
+                    <li> Food And Drinks</li>
+                    <li> Invitation Card</li>
+                    <li>May vary</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>For Others</h2>
+                <p class="price">10000.00</p>
+                <ul>
+                    <li> Full Services</li>
+                    <li>Decorations</li>
+                    <li> Music And Photos</li>
+                    <li> Food And Drinks</li>
+                    <li> Invitation Card</li>
+                    <li> May vary based on type</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h1>Event Details</h1>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Organiser Name</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <!--<th>Action</th>--> <!-- Action column for BOOK button -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h1>Stay on top of your schedule at all times</h1>
+        <div class="cta-buttons">
+            <a href="teventbook.html">
+                <button class="cta-button">Book Event Here</button>
+            </a>
+            <a href="tracksale.html">
+                <button class="cta-button">Track Ticket Sale</button>
+            </a>
+        </div>
+    </div>
+    
+    
+    
+</body>
+</html>

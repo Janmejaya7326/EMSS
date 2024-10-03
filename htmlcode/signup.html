@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS SOFTWARE - Sign Up</title>
+    <link rel="stylesheet" href="../csscode/sign.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle form submission
+            $('form').on('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Serialize form data
+                var formData = $(this).serialize();
+
+                // Make AJAX POST request
+                $.ajax({
+                    url: 'http://localhost:3000/signup',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Show alert based on response
+                        if (response === 'Success') {
+                            alert('Account created successfully!');
+                            window.location.href = 'navbar.html';
+                        } else {
+                            alert('Error creating account. Please try again later.');
+                        }
+                    },
+                    error: function() {
+                        alert('An unexpected error occurred. Please try again later.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>Everything you need<br>(and then some)</h2>
+            <ul>
+                <li>End-to-end event management</li>
+                <li>In-depth event analytics</li>
+                <li>0% commission event ticketing</li>
+                <li>Multichannel marketing tools</li>
+                <li>Touchless onsite solutions</li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <h1 class="centered-heading">EMS SOFTWARE</h1>
+            <form action="http://localhost:3000/signup" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+                </div>
+            
+                <button type="submit" class="signup-btn">Sign Up Now</button>
+            
+                <p>or sign up using</p>
+                <div class="social-signup">
+                    <a href="https://accounts.google.com/signin/v2/identifier" class="google-btn">Sign Up with Google</a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Event</title>
+    <link rel="stylesheet" href="../csscode/booking.css"> <!-- External CSS link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('eventId');
+            $('#eventId').val(eventId);
+    
+            $('#bookingForm').on('submit', function(event) {
+                event.preventDefault();
+    
+                const formData = {
+                    name: $('#name').val(),
+                    mobile: $('#mobile').val(),
+                    transactionId: $('#transactionId').val(),
+                    eventId: $('#eventId').val()  // Include eventId
+                };
+    
+                console.log('Form Data Submitted:', formData);
+    
+                // Send the form data to the server via AJAX
+                $.ajax({
+                    url: 'http://localhost:3000/book-event', // Adjust the URL if different
+                    type: 'POST',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        const eventId = $('#eventId').val(); 
+                        alert('Booking successfulr for the Event no: '+eventId);
+                        $('#bookingForm')[0].reset();  // Reset form on success
+                        window.location.href = 'ticketing.html';
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error: ' + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="../photos/booking.jpg" alt="Event Planning" />
+        </div>
+        <div class="form-section">
+            <h1>Book Event</h1>
+            <form id="bookingForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="mobile">Mobile No:</label>
+                <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder="Enter your mobile number">
+
+                <label for="upiId">UPI ID (For send booking Money):</label>
+                <input class="upi" type="text" id="upiId" value="janmejaya@paysnb (Amount must be 2000)" readonly>
+
+                <label for="transactionId">Transaction ID:</label>
+                <input type="text" id="transactionId" name="transactionId" required>
+
+                <!-- Hidden input for eventId -->
+                <input type="hidden" id="eventId" name="eventId">
+
+                <button type="submit">BOOK</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

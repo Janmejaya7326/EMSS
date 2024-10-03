@@ -1,0 +1,278 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container for the first section */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 140px;
+}
+
+.text-section {
+    flex: 1;
+    padding-right: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 1rem;
+    margin-right: 15px; /* Add space between buttons */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sign-up-btn {
+    background-color: #ff3b3b;
+    color: white;
+}
+
+.book-ticket-btn {
+    background-color: #ff3b3b;
+    color: white;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-section img {
+    max-width: 80%;
+    height: 50%;
+}
+
+/* Styling for the new photo-type section */
+.photo-type-section {
+    background-color: white;
+    color: black;
+    padding: 40px 0; /* Top and bottom padding only */
+    width: 100vw; /* Full width of the viewport */
+    margin: 40px 0 0 0;
+}
+
+.photo-type-section .inner-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center content */
+}
+
+.upper-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.upper-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.upper-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.lower-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.left-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30px;
+}
+
+.right-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .lower-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-image {
+        margin-top: 20px;
+    }
+
+    .right-image img {
+        width: 100%;
+    }
+}
+
+
+/* New section to match the given design */
+.unlock-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 0;
+    color: white;
+}
+
+.unlock-text {
+    flex: 1;
+    padding-right: 60px;
+    text-align: justify;
+}
+
+.unlock-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.unlock-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: rgba(201, 201, 201, 0.763);
+}
+
+.unlock-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.unlock-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .lower-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-image {
+        margin-top: 20px;
+    }
+
+    .right-image img {
+        width: 100%;
+    }
+
+    .unlock-section {
+        flex-direction: column;
+    }
+
+    .unlock-image {
+        margin-top: 20px;
+    }
+
+    .unlock-image img {
+        width: 100%;
+    }
+}
+
+/* Offline payment section with image below the text */
+.offline-payment-section {
+    background-color: #000000;
+    color: white;
+    padding: 40px 0;
+    width: 100vw;
+}
+
+.offline-payment-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.offline-payment-header {
+    margin-bottom: 30px;
+}
+
+.offline-payment-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.offline-payment-header p {
+    font-size: 1.0rem;
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    color: rgba(201, 201, 201, 0.763);
+}
+
+.offline-payment-image {
+    margin-top: 30px;
+}
+
+.offline-payment-image img {
+    max-width: 82%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    width: 100%;
+}

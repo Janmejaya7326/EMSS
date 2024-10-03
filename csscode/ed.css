@@ -1,0 +1,85 @@
+/* Search Bar Styles */
+.search-bar-container {
+    text-align: center;
+    margin: 20px 0;
+    margin-top: 140px;
+    background: linear-gradient(to bottom, #aadef7, white);
+}
+
+.search-form {
+    display: inline-block;
+    
+}
+
+.search-bar-container h1 {
+    margin-bottom: 40px;
+    padding-top: 50px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 700px;
+    border: 2px solid #3f3c3c;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 110px;
+    height: 42px;
+    font: bolder;
+}
+
+.search-button:hover {
+    background-color: #45a049;
+}
+
+
+.results-table {
+    width: 90%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 60px;
+    text-align: center;
+    margin-left: 35px;
+    font-size: 17px;
+}
+
+.results-table th, .results-table td {
+    border: 1px solid #ddd; /* Border for cells */
+    padding: 10px;          /* Padding for cells */
+          /* Align text to the left */
+}
+
+.results-table th {
+    background-color: #ece1e1; /* Light gray background for header */
+    font-weight: bold;          /* Bold text for headers */
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color */
+}
+
+.results-table tr:hover {
+    background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+footer {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}

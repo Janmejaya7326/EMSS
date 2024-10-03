@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Table</title>
+    <link rel="stylesheet" href="../csscode/dashboard.css">
+    <link rel="stylesheet" href="../csscode/style.css">
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch event data from the API
+            $.ajax({
+                url: 'http://localhost:3000/events',  // Adjust the API URL if necessary
+                type: 'GET',
+                success: function(events) {
+                    var tableBody = $('table tbody');
+    
+                    // Clear existing table rows if any
+                    tableBody.empty();
+    
+                    // Loop through the events and append rows to the table
+                    events.forEach(function(event) {
+                        var row = `
+                            <tr>
+                                <td>${event.title}</td>
+                                <td>${event.organization_name}</td>
+                                <td>${event.event_date}</td>
+                                <td>${event.location}</td>
+                                <td><button class="buy-btn" data-event-id="${event.id}">BOOK</button></td>
+                            </tr>
+                        `;
+                        tableBody.append(row);
+                    });
+    
+                    // Event listener for "BOOK" button
+                    $('.buy-btn').click(function() {
+                        const eventId = $(this).data('event-id');
+                        window.location.href = `booking.html?eventId=${eventId}`; // Redirect to booking form with eventId in query string
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to fetch events:', error);
+                    alert('Unable to load events. Please try again later.');
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+        <h1 style="color:blue; text-align: center;">Upcoming Events</h1>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Organiser Name</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Action</th> <!-- Action column for BOOK button -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4a0fd3f3; /* Blue background */
+    padding: 60px;
+    border-radius: 0px;
+    width: 100%;
+    max-width: none;
+    margin-top: 120px;
+}
+
+.left {
+    color: white;
+    width: 50%;
+}
+
+.left h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.left h2 {
+    color: orangered;
+    font-size: 24px;
+}
+
+.left p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.right img {
+    max-width: 106%;
+    height: 106%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.but {
+    color: white;
+    background-color: orangered;
+    height: 40px;
+    font-size: medium;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 0px 0px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 180px;
+}
+
+/* New section for event types */
+.event-types {
+    text-align: center;
+    padding: 60px 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.event-types h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.event-boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    max-width: 1300px; /* Increased max-width */
+    margin: 0 auto;
+}
+
+.event-box {
+    background: linear-gradient(135deg, #0d2bff, #ff0080); /* Gradient background */
+    color: white;
+    border-radius: 10px;
+    padding: 30px; /* Increase padding */
+    flex: 1;
+    width: 360px; /* Slightly decreased width */
+    height: 400px; /* Slightly decreased height */
+    max-width: 360px; /* Ensure max width is fixed */
+    text-align: center;
+}
+
+.event-box h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.event-box p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.event-box button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.event-box button:hover {
+    background-color: #ddd;
+}
+
+/* Image styling inside the event boxes */
+.event-image {
+    width: 100%;
+    max-height: 220px; /* Increased max-height */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* New section for 0% Commission Ticketing */
+.commission-ticketing {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 40px;
+    margin-top: 36px;
+    width: 100%;
+}
+
+.commission-ticketing .left {
+    width: 50%;
+    color: black;
+}
+
+.commission-ticketing .left h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.commission-ticketing .left h2 {
+    color: #007bff;
+}
+
+.commission-ticketing .right {
+    width: 50%;
+    padding-left: 60px;
+}
+
+.commission-ticketing .right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* New section for holistic audience engagement */
+.audience-engagement {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 40px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.audience-engagement .left {
+    width: 50%;
+    color: black;
+}
+
+.audience-engagement .left h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.audience-engagement .left h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.audience-engagement .left p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.audience-engagement .left a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.audience-engagement .left a:hover {
+    text-decoration: underline;
+}
+
+.audience-engagement .right {
+    width: 50%;
+    padding-left: 60px;
+}
+
+.audience-engagement .right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* AI-powered Networking Section */
+.networking-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 40px;
+    margin-top: 0px;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.networking-left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.networking-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.networking-right {
+    width: 45%;
+}
+
+.networking-right h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.networking-right p {
+    font-size: 18px;
+    color: black;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+
+footer {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}

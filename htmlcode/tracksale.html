@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link rel="stylesheet" href="../csscode/dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="table-container">
+        <h1>Ticket Booking Details</h1>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Booking Name</th>
+                        <th>Mobile</th>
+                        <th>Event Name</th>
+                        <th>Organiser Name</th>
+                        <th>Location</th>
+                        <th>Date</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            // Fetch event booking details from the new route
+            $.ajax({
+                url: 'http://localhost:3000/event-booking-details',  // Adjust the API URL if necessary
+                type: 'GET',
+                success: function(eventBookings) {
+                    var tableBody = $('table tbody');
+    
+                    // Clear existing table rows if any
+                    tableBody.empty();
+    
+                    // Loop through the joined data and append rows to the table
+                    eventBookings.forEach(function(eventBooking) {
+                        var row = `
+                            <tr>
+                                <td>${eventBooking.eventId}</td>
+                                <td>${eventBooking.bookingName}</td>
+                                <td>${eventBooking.mobile}</td>
+                                <td>${eventBooking.title}</td>
+                                <td>${eventBooking.organizationName}</td>
+                                <td>${eventBooking.location}</td>
+                                <td>${eventBooking.eventDate}</td>
+                            </tr>
+                        `;
+                        tableBody.append(row);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to fetch event booking details:', error);
+                    alert('Unable to load event booking details. Please try again later.');
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

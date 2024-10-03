@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS SOFTWARE - Contact Us</title>
+    <link rel="stylesheet" href="../csscode/style.css">
+    <link rel="stylesheet" href="../csscode/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle form submission
+            $('form').on('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Serialize form data
+                var formData = $(this).serialize();
+
+                // Make AJAX POST request
+                $.ajax({
+                    url: 'http://localhost:3000/submit-contact-form',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        if (response === 'Success') {
+                            alert('Message sent successfully!');
+                            $('#contactForm')[0].reset();
+                        } else {
+                            alert('Error submitting the form. Please try again.');
+                        }
+                    },
+                    error: function() {
+                        alert('An unexpected error occurred. Please try again later.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <!-- Upper Navbar -->
+    <div class="upper-navbar" id="upperNavbar">
+        <div class="navbar-left">
+            <h2>EMS</h2>
+        </div>
+        <div class="navbar-right">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Lower Navbar -->
+    <div class="lower-navbar" id="lowerNavbar">
+        <a href="home.html">Home</a> 
+        <a href="event-creation.html">Event Creation</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="event-discovery.html">Event Discovery</a>
+        <a href="ticketing.html">Ticketing</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-info">
+            <h2>Find us</h2>
+            <p style="font-size: 20px"><strong>EMS Software</strong></p>
+            <p>Opposite DN Regalia Mall, Kalinga Vihar, Patrapada<br>Bhubaneswar, Odisha 751019</p>
+            <p>Service Road South Tamando, DN Square, Kalinga Vihar, Patrapada<br>Bhubaneswar, Odisha 751019</p>
+            <p><i class="fas fa-phone-alt"></i> +91 8093081930</p>
+            <p><i class="fas fa-phone-alt"></i> +91 9090034567</p>
+            <p><i class="fas fa-envelope"></i> contact@emss.com</p>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=..."
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="form-section">
+        <h2>Have a Question?</h2>
+        <p>Simply fill out the form below to send us your message online</p>
+        
+        <form id="contactForm">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="surname" placeholder="Surname" required>
+            </div>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" maxlength="1000" required></textarea>
+
+            <div class="checkbox">
+                <input type="checkbox" name="authorization" required>
+                <label for="authorization">I authorize the processing of my personal information under D.Lgs. 196/2003.</label>
+            </div>
+        
+            <button type="submit">SEND</button>
+        </form>
+    </div>
+
+    <script src="../jscode/script.js"></script>
+</body>
+</html>

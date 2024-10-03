@@ -1,0 +1,177 @@
+/* Container styling */
+.container {
+    text-align: center;
+    padding: 80px;
+    background: linear-gradient(to bottom, #aadef7, white);
+    margin-top: 110px;
+}
+
+/* Heading style */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Paragraph style */
+p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* Content section styling (image on the left, text on the right) */
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image styling */
+.image {
+    flex: 1;
+}
+
+.image img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Text styling */
+.text {
+    flex: 1;
+    padding-left: 30px;
+}
+
+.text h1 {
+    font-family: Arial, sans-serif;
+    font-size: 33px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Button styling */
+.create-btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #007bff;
+    color: white;
+    font: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 50px;
+}
+
+.create-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Styles for the .content-section.reverse */
+.content-section.reverse {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 40px; 
+    background-color: #ffffff; 
+    margin: 20px auto; 
+    max-width: 1200px; 
+}
+
+/* Styles for the .text div */
+.content-section.reverse .text {
+    max-width: 50%; 
+    padding-right: 20px; 
+}
+
+.content-section.reverse .text h1 {
+    font-size:33px; 
+    color: #000000; 
+    margin-bottom: 15px;
+}
+
+.content-section.reverse .text p {
+    font-size: 1.1em; 
+    color: #333; 
+    line-height: 1.6; 
+}
+
+/* Styles for the .image div */
+.content-section.reverse .image {
+    flex: 1; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.content-section.reverse .image img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+
+/* Styles for the CTA section */
+.cta-section {
+    text-align: center; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+
+/* Styles for the heading */
+.cta-section h1 {
+    font-size: 36px; 
+    color: #000; 
+    margin-bottom: 24px; 
+}
+
+/* Styles for the button */
+.cta-button {
+    background-color: #d32f2f; 
+    color: #fff; 
+    border: none; 
+    padding: 15px 30px; 
+    font-size: 1em; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+/* Hover effect for the button */
+.cta-button:hover {
+    background-color: #c12727;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+footer {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    font: bold;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS SOFTWARE</title>
+    <link rel="stylesheet" href="../csscode/style.css">
+    <link rel="stylesheet" href="../csscode/ed.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Upper Navbar -->
+    <div class="upper-navbar" id="upperNavbar">
+        <div class="navbar-left">
+            <h2>EMS</h2>
+        </div>
+        <div class="navbar-right" id="authLinks">
+            <a href="login.html" id="loginLink">Login</a>
+            <a href="signup.html" id="signupLink">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Lower Navbar -->
+    <div class="lower-navbar" id="lowerNavbar">
+        <a href="home.html">Home</a> 
+        <a href="event-creation.html">Event Creation</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="event-discovery.html">Event Discovery</a>
+        <a href="ticketing.html">Ticketing</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-bar-container">
+        <form class="search-form" id="searchForm" action="javascript:void(0);">
+            <h1>Discover Upcoming Events</h1>
+            <input type="text" id="searchQuery" name="query" placeholder="Search event name here" class="search-input" required>
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <!-- Table to display results -->
+    <div class="results-container">
+        <table id="resultsTable" class="results-table" style="display:none; width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Organizer Name</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Ticket Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Handle the search form submission
+        document.getElementById('searchForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+            
+            const query = document.getElementById('searchQuery').value;
+
+            // Send a GET request to your Node.js server
+            try {
+                const response = await fetch(`http://localhost:3000/search-events?query=${encodeURIComponent(query)}`);
+                const results = await response.json();
+
+                if (results.length > 0) {
+                    const table = document.getElementById('resultsTable');
+                    const tbody = table.querySelector('tbody');
+                    
+                    // Clear any previous results
+                    tbody.innerHTML = '';
+
+                    // Populate the table with the new results
+                    results.forEach(event => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${event.title}</td>
+                            <td>${event.organization_name}</td>
+                            <td>${event.location}</td>
+                            <td>${event.event_date}</td>
+                            <td>${event.ticket_price}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+
+                    // Show the table if it was hidden
+                    table.style.display = 'table';
+                } else {
+                    alert('No events found for this query.');
+                    const table = document.getElementById('resultsTable');
+                    table.style.display = 'none'; // Hide the table if no results
+                }
+            } catch (error) {
+                console.error('Error fetching search results:', error);
+                alert('Error fetching search results.');
+            }
+        });
+    </script>
+
+    <script src="../jscode/script.js"></script>
+</body>
+</html>

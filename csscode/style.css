@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.lower-navbar a.active {
+    color: red;
+}
+
+/* Upper Navbar */
+.upper-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fbfbfb;
+    padding: 7px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px; /* Fixed height */
+    transition: top 0.3s; /* Smooth hide/show */
+}
+
+.upper-navbar h2 {
+    color: rgb(10, 1, 1);
+}
+
+.upper-navbar a {
+    color: rgb(7, 6, 6);
+    font-weight: bold; /* Make login/signup bold */
+}
+
+.navbar-right a {
+    margin-left: 10px; /* Reduced margin to move links left */
+    margin-right: 10px; /* Optional: space to the right */
+}
+
+/* Lower Navbar */
+.lower-navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #fbfbfbf3;
+    padding: 10px 0;
+    position: fixed;
+    top: 60px; /* Below the upper navbar */
+    width: 100%;
+    z-index: 999;
+    height: 60px;
+    color: black;
+    transition: top 0.3s; /* Smooth movement when upper navbar hides */
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.1); /* Adds shadow effect */
+
+}
+
+/* Ensure no content is hidden by the fixed navbars */
+.content {
+    padding-top:84px; /* Push content down below the navbars */
+
+}
+
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ae8ab0;
+    color: #333;
+    font: bold;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+}
+
+.footer p {
+    margin: 0;
+}

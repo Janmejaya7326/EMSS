@@ -1,0 +1,172 @@
+/* Pricing Table Container */
+.pricing-table {
+    width: 100%;
+    max-width: 1200px; /* Restrict the maximum width */
+    background-color: #1a1a1a;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 140px;
+}
+
+.pricing-table h1 {
+    font-size: 34px;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.pricing-table h1 span {
+    color: #1e90ff;
+}
+
+/* Pricing Cards Container */
+.pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-right: 350x;
+    
+    
+}
+
+
+/* Individual Card Style */
+.card {
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card h2 {
+    background-color: #1e90ff;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.price {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: white;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+    color: #dddddd;
+}
+
+ul li::before {
+    content: '✔ ';
+    color: #1e90ff;
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.table-container h1 {
+    color: #010000;
+    margin-bottom: 10px;
+    font-size: 38px;
+}
+
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #ece1e1;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    color: #333;
+}
+
+/* Buy Button Container */
+.buy-btn {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.buy-btn:hover {
+    background-color: #218838;
+}
+
+/* Styles for the CTA section */
+.cta-section {
+    text-align: center; 
+    margin: 40px auto; 
+    padding: 20px; 
+    margin-top: 80px;
+}
+
+/* Styles for the heading */
+.cta-section h1 {
+    font-size: 36px; 
+    color: #000; 
+    margin-bottom: 24px; 
+}
+
+/* Container for buttons */
+.cta-buttons {
+    display: inline-flex; /* Align buttons side by side */
+    gap: 20px; /* Space between buttons */
+}
+
+/* Styles for the Book Event button */
+.cta-button {
+    background-color: #d32f2f; 
+    color: #fff; 
+    border: none; 
+    padding: 15px 30px; 
+    font-size: 1em; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+/* Hover effect for the Book Event button */
+.cta-button:hover {
+    background-color: #c12727;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+

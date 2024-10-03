@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    background-color: #0a2240;
+    color: white;
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.left-section ul {
+    list-style: none;
+}
+
+.left-section ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.left-section ul li::before {
+    content: '✔';
+    margin-right: 10px;
+    color: green;
+}
+
+.right-section {
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+h1.centered-heading {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #FF5733; /* Different color for the EMS SOFTWARE heading */
+    text-align: center; /* Center the heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup-btn {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: darkred;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms input {
+    margin-right: 10px;
+}
+
+.terms a {
+    color: blue;
+}
+
+.social-signup {
+    display: flex;
+    justify-content: space-around;
+}
+
+.google-btn {
+    background-color: #4285F4;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Turn button into a link */
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.google-btn:hover {
+    background-color: #357ae8;
+}
